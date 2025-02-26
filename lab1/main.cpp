@@ -13,23 +13,23 @@ int main(){
     }
 
     Price total;
-    total.set(0,0);
+    set(total, 0, 0);
 
     int uah, coin, n;
     while(file >> uah >> coin >> n){
         Price price;
-        price.set(uah, coin);
-        price.multiply(n);
-        total.add(price);
+        set(price, uah, coin);
+        multiply(price, n);
+        add(total, price);
     }
     file.close();
 
     cout << "Загальна сума: ";
-    total.print();
+    print(total);
     cout << "\n";
-    total.round();
+    round(total);
     cout << "Сума після заокруглення: ";
-    total.print();
+    print(total);
     system("pause");
 
     return 0;

@@ -1,37 +1,37 @@
 #include "price.h"
 
-void Price::set(int u, int c){
-    uah = u + c / 100;
-    coin = c % 100;
+void set(Price &a, int u, int c){
+    a.uah = u + c / 100;
+    a.coin = c % 100;
 }
 
-void Price::add(const Price& another){
-    uah += another.uah;
-    coin += another.coin;
-    if(coin > 100){
-        uah++;
-        coin %= 100;
+void add(Price &a, const Price& another){
+    a.uah += another.uah;
+    a.coin += another.coin;
+    if(a.coin >= 100){
+        a.uah++;
+        a.coin %= 100;
     }
 }
 
-void Price::multiply(int n){
-    int valueInCoins = (uah * 100 + coin) * n;
-    uah = valueInCoins / 100;
-    coin = valueInCoins % 100;
+void multiply(Price &a, int n){
+    int valueInCoins = (a.uah * 100 + a.coin) * n;
+    a.uah = valueInCoins / 100;
+    a.coin = valueInCoins % 100;
 }
 
-void Price::round(){
-    int valueInCoins = uah * 100 + coin;
+void round(Price &a){
+    int valueInCoins = a.uah * 100 + a.coin;
     int lastDigit = valueInCoins % 10;
     if(lastDigit < 5){
         valueInCoins -= lastDigit;
     }else{
         valueInCoins += (10 - lastDigit);
     }
-    uah = valueInCoins / 100;
-    coin = valueInCoins % 100;
+    a.uah = valueInCoins / 100;
+    a.coin = valueInCoins % 100;
 }
 
-void Price::print() const{
-    std::cout << uah << " грн " << coin << " коп" << std::endl;
+void print(const Price &a) {
+    std::cout << a.uah << " грн " << a.coin << " коп" << std::endl;
 }
