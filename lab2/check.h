@@ -14,7 +14,7 @@ struct Triangle
     bool contains(const Point& P) const;
     double area() const;
     bool isDegenerate() const;
-    bool hasPointOnEdge(const Point& P) const;
+    bool isEdging(const Point& P) const;
 };
 
 double vectorProduct(const Point& A, const Point& B, const Point& P);
