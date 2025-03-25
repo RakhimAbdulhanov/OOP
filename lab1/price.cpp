@@ -1,26 +1,29 @@
 #include "price.h"
 
-void set(Price &a, int u, int c){
+Price set(Price a, int u, int c){
     a.uah = u + c / 100;
     a.coin = c % 100;
+    return a;
 }
 
-void add(Price &a, const Price& another){
-    a.uah += another.uah;
-    a.coin += another.coin;
+Price add(Price a, const Price b){
+    a.uah += b.uah;
+    a.coin += b.coin;
     if(a.coin >= 100){
         a.uah++;
         a.coin %= 100;
     }
+    return a;
 }
 
-void multiply(Price &a, int n){
+Price multiply(Price &a, int n){
     int valueInCoins = (a.uah * 100 + a.coin) * n;
     a.uah = valueInCoins / 100;
     a.coin = valueInCoins % 100;
+    return a;
 }
 
-void round(Price &a){
+Price round(Price &a){
     int valueInCoins = a.uah * 100 + a.coin;
     int lastDigit = valueInCoins % 10;
     if(lastDigit < 5){
@@ -30,6 +33,7 @@ void round(Price &a){
     }
     a.uah = valueInCoins / 100;
     a.coin = valueInCoins % 100;
+    return a;
 }
 
 void print(const Price &a) {
