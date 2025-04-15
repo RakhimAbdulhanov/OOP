@@ -16,6 +16,7 @@ int main(){
     double x_newton = newton->solve();
     std::cout << "\nroot(dyho): " << x_dyh << std::endl;
     std::cout << "root(newton): " << x_newton << std::endl;
-
+    delete dyh;
+    delete newton;
     return 0;
 }
