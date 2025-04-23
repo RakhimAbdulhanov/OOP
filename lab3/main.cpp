@@ -20,5 +20,7 @@ int main(){
     cout << "\nroot(dyho): " << fixed << setprecision(15) << x_dyh << endl;
     cout << "root(newt): " << fixed << setprecision(15) << x_newton << endl;
     cout << "f(x_new): " << f(x_newton) << " f(x_dyh): " << f(x_dyh);
+    delete dyh;
+    delete newton;
     return 0;
 }
