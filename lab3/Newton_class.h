@@ -4,9 +4,9 @@
 class Newton_class
 {
 private:
-   bool a;
-   bool b;
-   bool eps;
+   double a;
+   double b;
+   double eps;
 public:
     Newton_class(void);
     ~Newton_class();
