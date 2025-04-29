@@ -17,13 +17,19 @@ void Newton_class::setTolerance(double vol_eps) {
 }
 
 double Newton_class::solve(){
-    double x = b;
+    double x = (a+b) / 2;
     double x_next;
-    
     for(int i = 0; i < 1000; i++){
+        // cout << "i: " << i << endl;
         x_next = x - f(x) / f_prime(x);
+        // cout << "x_next: " << x_next << " x: " << x << endl;
+        // cout << eps;
+        if(fabs(x_next - x) < eps){
+            return x_next;
+        }
         x = x_next;
     }
+    cout << "max number of iterations lmao" << endl;
     return x; 
 }
 
