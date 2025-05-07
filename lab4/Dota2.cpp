@@ -2,7 +2,9 @@
 
 Hero::Hero(string n, int h, int m) : name(n), hp(h), mana(m) {}
 
-Hero::~Hero() {}
+Hero::~Hero() {
+    cout << "calling destructor of " << name << endl;
+}
 
 void Hero::setHp(int newHp) {
     hp = newHp;
@@ -36,6 +38,12 @@ void Hero::useMom(){
 void Hero::castSpell(){
     cout << "no spells i upgrade attributes";
 }
+void Hero::castSpell(int mana) {
+    if(!mana)
+    cout << "no mana for spell" << endl;
+    else
+    cout << "casting spell" << endl;
+}
 void Hero::castSunStrike(){
     cout << "no sunstrike u are not invoker bot kys";
 }
@@ -49,6 +57,7 @@ void HeroIntelligence::attack() {
 void HeroIntelligence::castSpell() {
     cout << "casting spell" << endl;
 }
+
 
 Invoker::Invoker(string n, int h, int m) : HeroIntelligence(n, h, m) {}
 
