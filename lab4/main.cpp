@@ -9,7 +9,7 @@ int main() {
     Hero *hero1 = new InvokerPrime("InvokerPrime", 900, 1100);
     hero1->showStats();
     hero1->attack();
-    hero1->castSpell();
+    hero1->castSpell(hero1->getMana());
     hero1->makeProcast();
     cout << "\n";
     Hero *hero2 = new ShadowFiend("ShadowFiend", 666, 666);
@@ -18,6 +18,7 @@ int main() {
     hero2->useMom();
     hero2->makeProcast();
     
+    delete hero0;
     delete hero1;
     delete hero2;
 
