@@ -1,7 +1,7 @@
 #include "Dota2.h"
 
 int main() {
-    Hero *hero0 = new Invoker("InvokerNoob", 500, 700);
+    Hero *hero0 = new Invoker("Invoker", 500, 700);
     hero0->showStats();
     hero0->attack();
     hero0->castSunStrike();
@@ -9,7 +9,7 @@ int main() {
     Hero *hero1 = new InvokerPrime("InvokerPrime", 900, 1100);
     hero1->showStats();
     hero1->attack();
-    hero1->castSpell(hero1->getMana());
+    hero1->castSpell();
     hero1->makeProcast();
     cout << "\n";
     Hero *hero2 = new ShadowFiend("ShadowFiend", 666, 666);

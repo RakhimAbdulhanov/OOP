@@ -26,6 +26,7 @@ public:
     virtual void makeProcast();
     virtual void useMom();
     virtual void castSpell();
+    virtual void castSpell(int mana);
     virtual void castSunStrike();
 };
 
